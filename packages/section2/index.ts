@@ -1,21 +1,29 @@
-// function add(number1: number, number2: number) {
-//   return number1 + number2;
-// }
+// number type
 
-// enum Role {ADMIN = 'ADMIN', BASIC_USER = 'BASIC_USER' }
+function add(number1: number, number2: number) {
+  return number1 + number2;
+}
 
-// type Person = {
-//   name: string;
-//   age: number;
-//   role: Role
-// }
+// enum type
+enum Role {
+  ADMIN = "ADMIN",
+  BASIC_USER = "BASIC_USER",
+}
 
-// const person = {
-//   name: "lucas",
-//   age: 24,
-//   role: Role.ADMIN
-// } as Person;
+// object and alias type
+type Person = {
+  name: string;
+  age: number;
+  role: Role;
+};
 
+const person = {
+  name: "lucas",
+  age: 24,
+  role: Role.ADMIN,
+} as Person;
+
+// alias type and Union
 type NumberOrSting = number | string;
 
 function combine(value1: NumberOrSting, value2: NumberOrSting): unknown {
@@ -30,3 +38,26 @@ function combine(value1: NumberOrSting, value2: NumberOrSting): unknown {
 
 console.log(combine("Meu", "Nome"));
 console.log(combine(1, 2));
+
+// Function type
+function callback(fn: () => void) {
+  fn();
+}
+
+callback(() => {
+  console.log("running callback...");
+  return true;
+});
+
+// The "unknown" type
+const userInput: unknown = "1";
+if (typeof userInput === "number") {
+  const userInputNumber: number = userInput;
+  console.log("Test unknown type: ", userInputNumber);
+}
+
+// The "never" type
+function generateError(message?: string): never {
+  throw new Error(message || "Generic error");
+}
+generateError();
