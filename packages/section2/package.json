@@ -1,0 +1,9 @@
+{
+  "name": "section2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev index.ts"
+  }
+}
