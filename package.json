@@ -1,7 +1,11 @@
 {
   "name": "course-typescript-2022",
+  "private": true,
   "version": "1.0.0",
   "main": "index.js",
   "author": "Lucas Mesquita <lucasoliveira98@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ]
 }
